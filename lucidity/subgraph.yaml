@@ -27,3 +27,16 @@ dataSources:
         - event: WorkflowDeleted(uint256)
           handler: handleWorkflowDeleted
       file: ./src/lucidity-workflows.ts
+templates:
+  - name: WorkflowMetadata
+    kind: file/ipfs
+    mapping:
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      file: ./src/ds-handlers.ts
+      handler: handleWorkflowMetadata
+      entities:
+        - WorkflowMetadata
+      abis:
+        - name: LucidityWorkflows
+          file: ./abis/LucidityWorkflows.json

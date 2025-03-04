@@ -3,7 +3,7 @@ pragma solidity ^0.8.24;
 
 import "./LucidityLibrary.sol";
 import "./LucidityErrors.sol";
-import "openzeppelin-contracts/contracts/utils/structs/EnumerableSet.sol";
+import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 
 contract LucidityWorkflows {
     using EnumerableSet for EnumerableSet.UintSet;
@@ -56,5 +56,11 @@ contract LucidityWorkflows {
         uint256 counter
     ) public view returns (string memory) {
         return _workflows[counter].workflowMetadata;
+    }
+
+    function getCreatorWorkflows(
+        address creator
+    ) public view returns (uint256[] memory) {
+        return _workflowsToCreator[creator].values();
     }
 }
