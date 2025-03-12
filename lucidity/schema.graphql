@@ -1,4 +1,4 @@
-type WorkflowCreated @entity(immutable: true) {
+type WorkflowCreated @entity(immutable: false) {
   id: Bytes!
   workflowMetadata: WorkflowMetadata # string
   creator: Bytes! # address
@@ -9,7 +9,7 @@ type WorkflowCreated @entity(immutable: true) {
   uri: String!
 }
 
-type WorkflowDeleted @entity(immutable: true) {
+type WorkflowDeleted @entity(immutable: false) {
   id: Bytes!
   counter: BigInt! # uint256
   blockNumber: BigInt!
