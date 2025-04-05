@@ -1,0 +1,17 @@
+type WorkflowCreated @entity(immutable: true) {
+  id: Bytes!
+  workflowMetadata: String! # string
+  creator: Bytes! # address
+  counter: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type WorkflowDeleted @entity(immutable: true) {
+  id: Bytes!
+  counter: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
